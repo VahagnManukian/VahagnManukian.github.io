@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vahagn Manukian — Research &amp; Publications</title>
+    <meta name="description" content="Research interests and book.">
+    <style>
+
+    :root {
+  /* Miami University (Ohio) — subtle brand accents */
+  --brand: #C8102E;            /* Miami Red */
+  --brand-soft: rgba(200,16,46,0.18);
+  --brand-soft2: rgba(200,16,46,0.10);
+
+  /* Readable dark theme */
+  --bg: #0b1220;
+  --panel: #111827;
+  --panel2: #0f172a;
+
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --muted2: #94a3b8;
+
+  --border: rgba(255,255,255,0.22);
+  --link: #7dd3fc;            /* keep links readable; not brand-red */
+  --accent: var(--brand);     /* brand used as accent */
+  --shadow: 0 10px 35px rgba(0,0,0,0.45);
+  --radius: 16px;
+  --max: 1100px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+* { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 5%, rgba(125,211,252,0.22), transparent 60%),
+        radial-gradient(1000px 600px at 85% 15%, rgba(200,16,46,0.18), transparent 55%),
+        radial-gradient(900px 600px at 40% 80%, rgba(15,23,42,0.45), transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(11, 18, 32, 0.70);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+    .brand h1 {
+      font-size: 18px;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+    .brand .meta {
+      font-size: 13px;
+      color: var(--muted2);
+      font-family: var(--mono);
+    }
+    nav a {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      text-decoration: none;
+    }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .title {
+      margin: 0 0 6px;
+      font-size: 34px;
+      letter-spacing: -0.3px;
+    }
+    .subtitle {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    section {
+      margin-top: 22px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: 0.1px;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--text);
+    }
+    .muted { color: var(--muted); }
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .kv {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 10px;
+      margin: 0;
+    }
+    .kv dt { color: var(--muted2); font-family: var(--mono); font-size: 12px; }
+    .kv dd { margin: 0; color: var(--text); }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+    .table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      vertical-align: top;
+      color: var(--muted);
+    }
+    .table tr:last-child td { border-bottom: none; }
+    .table td:first-child {
+      width: 170px;
+      color: var(--muted2);
+      font-family: var(--mono);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .pubs {
+      display: grid;
+      gap: 10px;
+    }
+    .pub {
+      padding: 12px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+    }
+    .pub .year {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted2);
+    }
+    .pub .cite {
+      margin-top: 4px;
+      color: var(--text);
+    }
+    .note {
+      color: var(--muted2);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+      color: var(--muted2);
+      border-top: 1px solid var(--border);
+    }
+  
+  
+/* Subtle Miami branding */
+header {
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+.brand h1::after{
+  content:"";
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin-left:10px;
+  border-radius:999px;
+  background: var(--brand);
+  box-shadow: 0 0 0 4px var(--brand-soft);
+  transform: translateY(1px);
+}
+nav a[aria-current="page"]{
+  color: var(--text);
+  background: var(--brand-soft2);
+  border: 1px solid var(--brand-soft);
+}
+nav a:hover{
+  background: var(--brand-soft2);
+}
+a{
+  text-underline-offset: 3px;
+}
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline: 3px solid var(--brand-soft);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+h2{
+  padding-left: 10px;
+  border-left: 3px solid var(--brand);
+}
+.chip{
+  border-color: rgba(200,16,46,0.35);
+  background: rgba(200,16,46,0.07);
+}
+.pub, .table{
+  border-color: rgba(255,255,255,0.18);
+}
+
+  </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <h1>Vahagn Manukian</h1>
+          <div class="meta">Miami University</div>
+        </div>
+        <nav> <a href="index.html">Home</a> <a
+            href="research_publications.html" aria-current="page">Research
+            &amp; Publications</a> <a href="funding.html">Awards &amp;
+            Funding</a>&nbsp; </nav>
+      </div>
+    </header>
+    <main>
+      <section class="card" id="research">
+        <h2>Research Interests</h2>
+        <ul class="list">
+          <li>Homoclinic, heteroclinic and limit cycle bifurcations</li>
+          <li>Existence and stability of nonlinear waves</li>
+          <li>Partial and ordinary differential equations</li>
+        </ul>
+        <p class="note"> </p>
+      </section>
+      <section class="card" id="book">
+        <h2>Book</h2>
+        <div class="pub">
+          <div class="year">November 14, 2022</div>
+          <div class="cite"> <strong>A. Ghazaryan, S. Lafortune, V.
+              Manukian</strong>. <a
+href="https://www.routledge.com/Introduction-to-Traveling-Waves/Ghazaryan-Lafortune-Manukian/p/book/9780367707057">Introduction
+              to Traveling Waves</a>. Chapman and Hall/CRC; 1st edition.
+          </div>
+        </div>
+      </section>
+      <section class="card" id="publications">
+        <h2>Publications and Preprints</h2>
+        <div class="note">* Denotes undergraduate student coauthors; **
+          denotes graduate student coauthors.</div>
+        <div class="pubs">
+          <div class="pub">
+            <div class="year">2025</div>
+            <div class="cite">A. Ghazaryan, V. Manukian, J. Waldmann*,
+              P. Yinzime**, Regime dependent infection propagation
+              fronts in an SIS model. <em>Quarterly of Applied
+                Mathematics</em> (Accepted).</div>
+          </div>
+          <div class="pub">
+            <div class="year">2024</div>
+            <div class="cite">A. Ghazaryan, S. Lafortune, Y. Latushkin,
+              V. Manukian, Stability of fronts in the diffusive
+              Rosenzweig-MacArthur model. <em>Studies in Applied
+                Mathematics</em> (2024); e12755.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2022</div>
+            <div class="cite">V. Manukian, S. Schecter, More traveling
+              waves in the Holling-Tanner model with weak diffusion. <em>Discrete
+                &amp; Continuous Dynamical Systems – Series B</em> 27
+              (2022), no. 9.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2021</div>
+            <div class="cite">M. Bakhshi**, A. Ghazaryan, V. Manukian,
+              N. Rodriguez, Traveling wave solutions in a model for
+              social outbursts in a tension-inhibitive regime. <em>Studies
+                in Applied Mathematics</em> 147 (2021), no. 2, 650–674.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2020</div>
+            <div class="cite">A. Ghazaryan, S. Lafortune, V. Manukian,
+              Spectral analysis of fronts in a Marangoni-driven thin
+              liquid film flow down a slope. <em>SIAM Journal on
+                Applied Mathematics</em> 80 (2020), no. 1, 95–118.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2019</div>
+            <div class="cite">H. Cai*, A. Ghazaryan, V. Manukian,
+              Fisher–KPP dynamics in diffusive Rosenzweig–MacArthur and
+              Holling–Tanner models. <em>Mathematical Modelling of
+                Natural Phenomena</em> 14 (2019) 404.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2018</div>
+            <div class="cite">A. Ghazaryan, S. Lafortune, V. Manukian,
+              Stability of nonlinear waves and patterns and related
+              topics. <em>Philosophical Transactions of the Royal
+                Society A</em> 376 (2018) 20180001.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2015</div>
+            <div class="cite">A. Ghazaryan, S. Lafortune, V. Manukian,
+              Stability of front solutions in a model for a surfactant
+              driven flow on an inclined plane. <em>Physica D:
+                Nonlinear Phenomena</em> 307 (2015) 1–13.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2015</div>
+            <div class="cite">A. Ghazaryan, V. Manukian, S. Schecter,
+              Traveling waves in the Holling–Tanner model with weak
+              diffusion. <em>Proceedings of the Royal Society A</em>
+              471 (2015) 16pp.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2015</div>
+            <div class="cite">V. Manukian, On traveling waves of
+              Gray–Scott model. <em>Dynamical Systems: An International
+                Journal</em> 30 (2015), no. 3, 270–296.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2015</div>
+            <div class="cite">A. Ghazaryan, V. Manukian, Coherent
+              structures in a population model for mussel–algae
+              interaction. <em>SIAM Journal on Dynamical Systems</em>
+              14 (2015), no. 2, 893–913.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2009</div>
+            <div class="cite">N. Costanzino, V. Manukian, C. K. R. T.
+              Jones, Solitary waves of the regularized short pulse and
+              Ostrovsky equations. <em>SIAM Journal on Mathematical
+                Analysis</em> 41 (2009) 2088–2106.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2009</div>
+            <div class="cite">V. Manukian, N. Costanzino, C. K. R. T.
+              Jones, B. Sandstede, Existence of multi-pulses of the
+              regularized short-pulse and Ostrovsky equations. <em>Journal
+                of Dynamics and Differential Equations</em> 21 (2009)
+              607–622.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2009</div>
+            <div class="cite">V. Manukian, B. Sandstede, Multi-hump
+              pulses in systems with reflection and phase invariance. <em>Journal
+                of Differential Equations</em> 247 (2009) 1886–1898.</div>
+          </div>
+          <div class="pub">
+            <div class="year">2009</div>
+            <div class="cite">V. Manukian, S. Schecter, Traveling waves
+              for a thin liquid film with surfactant on an inclined
+              plane. <em>Nonlinearity</em> 22 (2009) 85–122.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>© 2026 Vahagn Manukian. Last updated January 13, 2026.</div>
+    </footer>
+  </body>
+</html>

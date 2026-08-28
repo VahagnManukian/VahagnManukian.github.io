@@ -1,386 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vahagn Manukian — Home</title>
-    <meta name="description" content="Academic homepage: positions,
-      education, and contact.">
+    <title>Dr. Vahagn Manukian — Professor of Mathematics & Applied Computing</title>
+    <meta name="description" content="Academic homepage for Dr. Vahagn Manukian, Professor at Miami University specializing in nonlinear waves, bifurcation theory, and differential equations.">
+    
     <style>
+      :root {
+        /* Primary & Brand Colors */
+        --brand: #d62828;            /* Refined Vivid Red Accent */
+        --brand-hover: #f03e3e;
+        --brand-soft: rgba(214, 40, 40, 0.22);
+        --brand-soft2: rgba(214, 40, 40, 0.10);
 
-    :root {
-  /* Miami University (Ohio) — subtle brand accents */
-  --brand: #C8102E;            /* Miami Red */
-  --brand-soft: rgba(200,16,46,0.18);
-  --brand-soft2: rgba(200,16,46,0.10);
+        /* Modern Slate Background Palette */
+        --bg: #0f172a;               /* Deep Slate Navy */
+        --panel: #1e293b;            /* Rich Dark Slate */
+        --panel-secondary: #334155;  /* Subtle Card Inset Background */
 
-  /* Readable dark theme */
-  --bg: #0b1220;
-  --panel: #111827;
-  --panel2: #0f172a;
+        /* Typography Colors (High Contrast) */
+        --text: #f8fafc;             /* Pure Crisp White */
+        --muted: #e2e8f0;            /* Bright Reader Text */
+        --muted2: #94a3b8;           /* Subdued Labels */
 
-  --text: #f8fafc;
-  --muted: #cbd5e1;
-  --muted2: #94a3b8;
+        /* Interactive & Accent Colors */
+        --border: rgba(226, 232, 240, 0.14);
+        --border-hover: rgba(226, 232, 240, 0.32);
+        --link: #38bdf8;             /* Vibrant Sky Blue */
+        --link-hover: #7dd3fc;       /* Bright Soft Blue */
+        --shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+        --radius: 16px;
+        --max-width: 1100px;
 
-  --border: rgba(255,255,255,0.22);
-  --link: #7dd3fc;            /* keep links readable; not brand-red */
-  --accent: var(--brand);     /* brand used as accent */
-  --shadow: 0 10px 35px rgba(0,0,0,0.45);
-  --radius: 16px;
-  --max: 1100px;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-}
-* { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: var(--sans);
-      color: var(--text);
-      background:
-        radial-gradient(1200px 700px at 15% 5%, rgba(125,211,252,0.22), transparent 60%),
-        radial-gradient(1000px 600px at 85% 15%, rgba(200,16,46,0.18), transparent 55%),
-        radial-gradient(900px 600px at 40% 80%, rgba(15,23,42,0.45), transparent 60%),
-        var(--bg);
-      line-height: 1.55;
-    }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      background: rgba(11, 18, 32, 0.70);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 12px 18px;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .brand {
-      display: flex;
-      gap: 10px;
-      align-items: baseline;
-    }
-    .brand h1 {
-      font-size: 18px;
-      margin: 0;
-      letter-spacing: 0.2px;
-    }
-    .brand .meta {
-      font-size: 13px;
-      color: var(--muted2);
-      font-family: var(--mono);
-    }
-    nav a {
-      font-size: 14px;
-      color: var(--muted);
-      padding: 6px 10px;
-      border-radius: 999px;
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      text-decoration: none;
-    }
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px 18px 72px;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; }
-    }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .title {
-      margin: 0 0 6px;
-      font-size: 34px;
-      letter-spacing: -0.3px;
-    }
-    .subtitle {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .chip {
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      padding: 6px 10px;
-      border-radius: 999px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-    @media (max-width: 860px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-    section {
-      margin-top: 22px;
-    }
-    h2 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: 0.1px;
-    }
-    h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
-      color: var(--text);
-    }
-    .muted { color: var(--muted); }
-    .list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-    .kv {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 10px;
-      margin: 0;
-    }
-    .kv dt { color: var(--muted2); font-family: var(--mono); font-size: 12px; }
-    .kv dd { margin: 0; color: var(--text); }
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-    }
-    .table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.10);
-      vertical-align: top;
-      color: var(--muted);
-    }
-    .table tr:last-child td { border-bottom: none; }
-    .table td:first-child {
-      width: 170px;
-      color: var(--muted2);
-      font-family: var(--mono);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .pubs {
-      display: grid;
-      gap: 10px;
-    }
-    .pub {
-      padding: 12px 12px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-    }
-    .pub .year {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted2);
-    }
-    .pub .cite {
-      margin-top: 4px;
-      color: var(--text);
-    }
-    .note {
-      color: var(--muted2);
-      font-size: 13px;
-      margin-top: 8px;
-    }
-    footer {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px;
-      color: var(--muted2);
-      border-top: 1px solid var(--border);
-    }
-  
-  
-/* Subtle Miami branding */
-header {
-  border-bottom: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-}
-.brand h1::after{
-  content:"";
-  display:inline-block;
-  width:10px;
-  height:10px;
-  margin-left:10px;
-  border-radius:999px;
-  background: var(--brand);
-  box-shadow: 0 0 0 4px var(--brand-soft);
-  transform: translateY(1px);
-}
-nav a[aria-current="page"]{
-  color: var(--text);
-  background: var(--brand-soft2);
-  border: 1px solid var(--brand-soft);
-}
-nav a:hover{
-  background: var(--brand-soft2);
-}
-a{
-  text-underline-offset: 3px;
-}
-a:focus-visible, button:focus-visible, input:focus-visible{
-  outline: 3px solid var(--brand-soft);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-h2{
-  padding-left: 10px;
-  border-left: 3px solid var(--brand);
-}
-.chip{
-  border-color: rgba(200,16,46,0.35);
-  background: rgba(200,16,46,0.07);
-}
-.pub, .table{
-  border-color: rgba(255,255,255,0.18);
-}
+        /* Fonts */
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
 
-  </style>
+      * { 
+        box-sizing: border-box; 
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--sans);
+        color: var(--text);
+        background:
+          radial-gradient(1200px 700px at 15% 5%, rgba(56, 189, 248, 0.08), transparent 60%),
+          radial-gradient(1000px 600px at 85% 15%, rgba(214, 40, 40, 0.12), transparent 55%),
+          radial-gradient(900px 600px at 50% 85%, rgba(15, 23, 42, 0.8), transparent 60%),
+          var(--bg);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a { 
+        color: var(--link); 
+        text-decoration: none; 
+        transition: color 0.2s ease, text-decoration 0.2s ease;
+      }
+      
+      a:hover, a:focus-visible { 
+        text-decoration: underline; 
+        color: var(--link-hover);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        background: rgba(15, 23, 42, 0.85);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .brand .name {
+        font-size: 1.15rem;
+        letter-spacing: -0.2px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+
+      .brand .name::after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-left: 10px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 4px var(--brand-soft);
+      }
+
+      .brand .meta a {
+        font-size: 0.85rem;
+        color: var(--muted2);
+        font-family: var(--mono);
+      }
+
+      nav {
+        display: flex;
+        gap: 6px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        color: var(--muted);
+        padding: 6px 14px;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+      }
+
+      nav a:hover, nav a:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      nav a[aria-current="page"] {
+        color: #ffffff;
+        background: var(--brand-soft2);
+        border-color: var(--brand-soft);
+        font-weight: 500;
+      }
+
+      main {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+        width: 100%;
+        flex: 1;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 28px;
+        transition: border-color 0.2s ease;
+      }
+
+      .card:hover {
+        border-color: var(--border-hover);
+      }
+
+      /* Hero Layout */
+      .hero-wrapper {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        border: 2px solid var(--border);
+      }
+
+      .hero-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .title {
+        font-size: 2.25rem;
+        letter-spacing: -0.5px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        color: #ffffff;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .muted { 
+        color: var(--muted2); 
+        font-size: 0.95rem;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 20px 0;
+      }
+
+      .chip {
+        font-size: 0.8rem;
+        color: #f1f5f9;
+        border: 1px solid rgba(214, 40, 40, 0.35);
+        background: rgba(214, 40, 40, 0.14);
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-weight: 500;
+      }
+
+      .note {
+        color: var(--muted2);
+        font-size: 0.875rem;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+
+      /* Grid Section Layout */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      section h2 {
+        margin-bottom: 16px;
+        font-size: 1.25rem;
+        letter-spacing: -0.2px;
+        padding-left: 12px;
+        border-left: 3px solid var(--brand);
+        color: #ffffff;
+      }
+
+      section h3 {
+        margin: 28px 0 12px;
+        font-size: 1.05rem;
+        color: #ffffff;
+      }
+
+      /* Key-Value Lists */
+      .kv {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 12px 16px;
+      }
+
+      .kv dt { 
+        color: var(--muted2); 
+        font-family: var(--mono); 
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding-top: 2px;
+      }
+
+      .kv dd { 
+        color: var(--muted); 
+        font-size: 0.95rem;
+      }
+
+      /* Academic Experience Table */
+      .table-container {
+        overflow-x: auto;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(15, 23, 42, 0.4);
+      }
+
+      .table th,
+      .table td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      .table th {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--muted2);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .table td {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .table tr:last-child td { 
+        border-bottom: none; 
+      }
+
+      .table td:first-child {
+        width: 170px;
+        color: #cbd5e1;
+        font-family: var(--mono);
+        font-size: 0.825rem;
+        white-space: nowrap;
+      }
+
+      /* Clean List Styling */
+      .list {
+        list-style: none;
+      }
+
+      .list li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--brand);
+        font-weight: bold;
+      }
+
+      footer {
+        max-width: var(--max-width);
+        width: 100%;
+        margin: auto auto 0;
+        padding: 32px 20px;
+        color: var(--muted2);
+        border-top: 1px solid var(--border);
+        font-size: 0.85rem;
+        text-align: center;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 860px) {
+        .hero-wrapper,
+        .grid-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-img {
+          max-width: 160px;
+        }
+
+        .title {
+          font-size: 1.85rem;
+        }
+
+        .nav-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
-      <div class="nav">
+      <div class="nav-container">
         <div class="brand">
-          <h1>Vahagn Manukian</h1>
-          <div class="meta"><a href="https://miamioh.edu/" target="_blank" rel="noopener">Miami University</a></div>
+          <span class="name">Vahagn Manukian</span>
+          <span class="meta"><a href="https://miamioh.edu/" target="_blank" rel="noopener">Miami University</a></span>
         </div>
-        <nav> <a href="index.html" aria-current="page">Home</a> <a
-            href="research_publications.html">Research &amp;
-            Publications</a> <a href="funding.html">Awards &amp;
-            Funding</a>&nbsp; </nav>
+        <nav aria-label="Main Navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="research_publications.html">Research &amp; Publications</a>
+          <a href="funding.html">Awards &amp; Funding</a>
+        </nav>
       </div>
     </header>
+
     <main>
-      <section class="card" style="margin-bottom:10px;
-        text-align:center"> <img src="IMG_8318.jpeg" alt="Photo"
-          style="max-width: 100%; border-radius: 14px; box-shadow:
-          rgba(0, 0, 0, 0.35) 0px 8px 30px;" width="269" height="240"> </section>
-      <div class="hero">
-        <div class="card" id="about">
-          <h1 class="title">Vahagn Manukian</h1>
-          <p class="subtitle">Professor (Mathematical &amp;
-            Physical Sciences; Mathematics), Miami University. </p>
-          <p class="muted"> Research in nonlinear waves and patterns,
-            bifurcation theory, and differential equations. </p>
-          <div class="chips"> <span class="chip">Nonlinear waves</span>
-            <span class="chip">Reaction–diffusion systems</span> <span
-              class="chip">Bifurcation theory</span> <span class="chip">PDE/ODE</span>
+      <div class="hero-wrapper">
+        <div class="card profile-card">
+          <img src="IMG_8318.jpeg" alt="Portrait of Dr. Vahagn Manukian" class="profile-img">
+        </div>
+
+        <div class="card hero-main" id="about">
+          <div>
+            <h1 class="title">Vahagn Manukian, Ph.D.</h1>
+            <p class="subtitle">Professor of Applied Computing &amp; Engineering Technology and Mathematics</p>
+            <p class="muted">Focusing on research in nonlinear waves and patterns, bifurcation theory, and differential equations.</p>
+            
+            <div class="chips" aria-label="Research Areas">
+              <span class="chip">Nonlinear Waves</span>
+              <span class="chip">Reaction–Diffusion Systems</span>
+              <span class="chip">Bifurcation Theory</span>
+              <span class="chip">PDE / ODE</span>
+            </div>
           </div>
-          <p class="note"> Google Scholar: <a
-              href="https://scholar.google.com/citations?user=MeohNnIAAAAJ&amp;hl=en">profile</a>.
+
+          <p class="note">
+            Google Scholar Profile: <a href="https://scholar.google.com/citations?user=MeohNnIAAAAJ&amp;hl=en" target="_blank" rel="noopener">View Citations &amp; Papers</a>
           </p>
         </div>
-        <div class="card" id="contact">
-          <h2>Contact</h2>
-          <dl class="kv">
-            <dt>Email</dt>
-            <dd><a href="mailto:manukive@muohio.edu">manukive@muohio.edu</a></dd>
-            <dt>Phone</dt>
-            <dd>(513) 785-3220</dd>
-            <dt>Affiliation</dt>
-            <dd>Miami University (Hamilton, Ohio)</dd>
-          </dl>
-          <h2>Education</h2>
-          <dl class="kv">
-            <dt>M.A.</dt>
-            <dd>SUNY at Buffalo</dd>
-            <dt>Ph.D.</dt>
-            <dd>Ohio State University</dd>
-          </dl>
+      </div>
+
+      <div class="grid-layout">
+        <div class="card">
+          <section id="contact">
+            <h2>Contact Information</h2>
+            <dl class="kv">
+              <dt>Email</dt>
+              <dd><a href="mailto:manukive@muohio.edu">manukive@muohio.edu</a></dd>
+              <dt>Phone</dt>
+              <dd>(513) 785-3220</dd>
+              <dt>Campus</dt>
+              <dd>Miami University (Hamilton, OH)</dd>
+            </dl>
+          </section>
+
+          <section id="education" style="margin-top: 36px;">
+            <h2>Education</h2>
+            <dl class="kv">
+              <dt>Ph.D.</dt>
+              <dd>Ohio State University</dd>
+              <dt>M.A.</dt>
+              <dd>SUNY at Buffalo</dd>
+            </dl>
+          </section>
+        </div>
+
+        <div class="card" id="positions">
+          <section>
+            <h2>Academic Positions</h2>
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Period</th>
+                    <th scope="col">Role &amp; Department</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>July 2026 – Present</td>
+                    <td>Professor, Department of Applied Computing and Engineering Technology &amp; Department of Mathematics, Miami University</td>
+                  </tr>
+                  <tr>
+                    <td>Aug 2018 – Aug 2024</td>
+                    <td>Chair, Department of Mathematical and Physical Sciences, Miami University</td>
+                  </tr>
+                  <tr>
+                    <td>Feb 2024 – Aug 2024</td>
+                    <td>Interim Chair, Department of Engineering Technology, Miami University</td>
+                  </tr>
+                  <tr>
+                    <td>Aug 2017 – July 2026</td>
+                    <td>Associate Professor, Department of Mathematical and Physical Sciences &amp; Department of Mathematics, Miami University</td>
+                  </tr>
+                  <tr>
+                    <td>Aug 2010 – Aug 2017</td>
+                    <td>Assistant Professor, Department of Mathematics, Miami University</td>
+                  </tr>
+                  <tr>
+                    <td>Aug 2008 – May 2010</td>
+                    <td>Lecturer, Department of Mathematics, University of Kansas</td>
+                  </tr>
+                  <tr>
+                    <td>June 2005 – Aug 2008</td>
+                    <td>Research Associate, Department of Mathematics, University of North Carolina at Chapel Hill</td>
+                  </tr>
+                  <tr>
+                    <td>June 2005 – May 2008</td>
+                    <td>Postdoctoral Fellow, Department of Mathematics, North Carolina State University</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Professional Affiliations &amp; Visiting Appointments</h3>
+            <ul class="list">
+              <li>Adjunct Professor of Mathematics &amp; Associate Member of Graduate Faculty, Department of Mathematics, North Carolina State University (2013–2018).</li>
+              <li>Long Term Visitor, Institute for Mathematics and its Applications (IMA) (June 1, 2013 – June 20, 2013).</li>
+            </ul>
+          </section>
         </div>
       </div>
-      <div class="grid">
-        <section class="card" id="positions">
-          <h2>Positions Held</h2>
-          <table class="table" role="presentation">
-            <tbody>
-              <tr>
-                <td>Aug 2018 – Aug 2024</td>
-                <td>Chair, Department of Mathematical and Physical
-                  Sciences, Miami University</td>
-              </tr>
-              <tr>
-                <td>Feb 2024 – Aug 2024</td>
-                <td>Interim Chair, Department of Engineering Technology,
-                  Miami University</td>
-              </tr>
-              <tr>
-                <td>Aug 2017 – Present</td>
-                <td>Associate Professor, Department of Mathematical and
-                  Physical Sciences; Department of Mathematics, Miami
-                  University</td>
-              </tr>
-              <tr>
-                <td>Aug 2010 – Aug 2017</td>
-                <td>Assistant Professor, Department of Mathematics,
-                  Miami University</td>
-              </tr>
-              <tr>
-                <td>Aug 2008 – May 2010</td>
-                <td>Lecturer, Department of Mathematics, University of
-                  Kansas</td>
-              </tr>
-              <tr>
-                <td>June 2005 – Aug 2008</td>
-                <td>Research Associate, Department of Mathematics,
-                  University of North Carolina at Chapel Hill</td>
-              </tr>
-              <tr>
-                <td>June 2005 – May 2008</td>
-                <td>Postdoctoral Fellow, Department of Mathematics,
-                  North Carolina State University</td>
-              </tr>
-            </tbody>
-          </table>
-          <h3>Professional affiliations</h3>
-          <ul class="list">
-            <li>Adjunct Professor of Mathematics; Associate Member in
-              Graduate Faculty, Department of Mathematics, North
-              Carolina State University (2013–2018).</li>
-            <li>Long Term Visitor at the Institute for Mathematics and
-              its Applications (IMA) (June 1, 2013 – June 20, 2013).</li>
-          </ul>
-        </section>
-      </div>
     </main>
+
     <footer>
-      <div>© 2026 Vahagn Manukian. Last updated January 13, 2026.</div>
+      <p>© 2026 Vahagn Manukian. Last updated January 13, 2026.</p>
     </footer>
   </body>
 </html>
